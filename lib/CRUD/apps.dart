@@ -5,6 +5,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Center(child: Text("TODO page"))));
+    return Scaffold(appBar: AppBar(title: Center(child: Text("List page"))));
   }
 }
