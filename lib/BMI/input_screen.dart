@@ -18,7 +18,7 @@ class _InputScreenState extends State<InputScreen> {
       appBar: AppBar(
         title: const Text("BMI Calculator"),
         centerTitle: true,
-        backgroundColor: Colors.blue.shade800,
+        backgroundColor: const Color.fromARGB(255, 99, 158, 224),
       ),
       backgroundColor: const Color.fromARGB(255, 227, 228, 233),
       body: Padding(
@@ -56,7 +56,7 @@ class _InputScreenState extends State<InputScreen> {
                   Slider(
                     value: height,
                     min: 100,
-                    max: 220,
+                    max: 250,
                     activeColor: Colors.pink,
                     inactiveColor: Colors.grey,
                     onChanged: (val) {
