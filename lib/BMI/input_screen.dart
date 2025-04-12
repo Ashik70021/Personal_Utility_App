@@ -57,7 +57,7 @@ class _InputScreenState extends State<InputScreen> {
                     value: height,
                     min: 100,
                     max: 250,
-                    activeColor: Colors.pink,
+                    activeColor: const Color.fromARGB(255, 110, 3, 39),
                     inactiveColor: Colors.grey,
                     onChanged: (val) {
                       setState(() {
