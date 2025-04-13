@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'result_screen.dart';
 
 class InputScreen extends StatefulWidget {
   const InputScreen({super.key});
@@ -57,7 +58,7 @@ class _InputScreenState extends State<InputScreen> {
                     value: height,
                     min: 100,
                     max: 250,
-                    activeColor: const Color.fromARGB(255, 110, 3, 39),
+                    activeColor: const Color.fromARGB(255, 192, 202, 80),
                     inactiveColor: Colors.grey,
                     onChanged: (val) {
                       setState(() {
@@ -116,15 +117,18 @@ class _InputScreenState extends State<InputScreen> {
               height: 60,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink,
+                  backgroundColor:const Color.fromARGB(255, 99, 158, 224),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 onPressed: () {
-                  // Add your calculation and navigation here
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("BMI Calculated!")),
+                  double bmi = weight / ((height / 100) * (height / 100));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultScreen(bmi: bmi),
+                    ),
                   );
                 },
                 child: const Text(
@@ -179,10 +183,10 @@ class _InputScreenState extends State<InputScreen> {
   Widget weightButton(IconData icon, VoidCallback onPressed) {
     return FloatingActionButton(
       heroTag: icon.toString(),
-      backgroundColor: Colors.pink,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       mini: true,
       onPressed: onPressed,
-      child: Icon(icon, color: Colors.white),
+      child: Icon(icon, color: Colors.black),
     );
   }
 }
