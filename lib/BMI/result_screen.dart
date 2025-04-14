@@ -20,7 +20,7 @@ class ResultScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("BMI Result"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 67, 158, 224),
+        backgroundColor: const Color.fromARGB(255, 99, 158, 224),
       ),
       backgroundColor: const Color.fromARGB(255, 236, 236, 246),
       body: Center(
@@ -39,14 +39,36 @@ class ResultScreen extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 48,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 63, 196, 240),
+                  color: Color.fromARGB(255, 1, 0, 0),
                 ),
               ),
               const SizedBox(height: 24),
               Text(
                 "Category: $category",
                 style: const TextStyle(fontSize: 20),
-              )
+              ),
+              const SizedBox(height: 40),
+
+              // Recalculate Button
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context); // Go back to InputScreen
+                  },
+                  child: const Text(
+                    "Recalculate",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -54,3 +76,4 @@ class ResultScreen extends StatelessWidget {
     );
   }
 }
+
