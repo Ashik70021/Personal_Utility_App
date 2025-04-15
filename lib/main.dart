@@ -58,11 +58,7 @@ class _MyWidgetState extends State<MyWidget> {
                       child: const Center(
                         child: Text(
                           "Calculate Your BMI",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20, // Increased font size
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
@@ -76,14 +72,7 @@ class _MyWidgetState extends State<MyWidget> {
                     height: 50,
                     width: double.infinity,
                     child: const Center(
-                      child: Text(
-                        "Or",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20, // Increased font size
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
+                      child: Text("Or", style: TextStyle(color: Colors.white)),
                     ),
                   ),
                   const SizedBox(height: 50),
@@ -103,12 +92,8 @@ class _MyWidgetState extends State<MyWidget> {
                       width: double.infinity,
                       child: const Center(
                         child: Text(
-                          "Make a Product List",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20, // Increased font size
-                            fontWeight: FontWeight.bold,
-                          ),
+                          "Daily Product List",
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
