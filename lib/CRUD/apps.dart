@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/CRUD/add_product_list_screen.dart';
-import 'package:flutter_application_1/CRUD/product.dart';
-import 'package:flutter_application_1/CRUD/product_list_screen.dart';
-import 'package:flutter_application_1/CRUD/update_product_list_screen.dart';
+import 'package:personal_utility_app/CRUD/add_product_list_screen.dart';
+import 'package:personal_utility_app/CRUD/product.dart';
+import 'package:personal_utility_app/CRUD/product_list_screen.dart';
+import 'package:personal_utility_app/CRUD/update_product_list_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/CRUD/add_product_list_screen.dart';
-import 'package:flutter_application_1/CRUD/product.dart';
-import 'package:flutter_application_1/CRUD/product_item.dart';
 import 'package:http/http.dart';
+import 'package:personal_utility_app/CRUD/add_product_list_screen.dart';
+import 'package:personal_utility_app/CRUD/product.dart';
+import 'package:personal_utility_app/CRUD/product_item.dart';
 
 class ProductListScreen extends StatefulWidget {
   const ProductListScreen({super.key});
@@ -26,34 +26,26 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(builder: (BuildContext context) {
-          return IconButton(
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.white),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         backgroundColor: const Color.fromARGB(255, 1, 35, 66),
         title: const Center(
-          child: Text(
-            "Product List",
-            style: TextStyle(color: Colors.white),
-          ),
+          child: Text("Product List", style: TextStyle(color: Colors.white)),
         ),
         actions: [
           IconButton(
             onPressed: () {
               _getProductList();
             },
-            icon: const Icon(
-              Icons.refresh,
-              color: Colors.white,
-              size: 24,
-            ),
+            icon: const Icon(Icons.refresh, color: Colors.white, size: 24),
           ),
         ],
       ),
@@ -75,17 +67,13 @@ class _ProductListScreenState extends State<ProductListScreen> {
           },
           child: Visibility(
             visible: _getProductListInProgress == false,
-            replacement: const Center(
-              child: CircularProgressIndicator(),
-            ),
+            replacement: const Center(child: CircularProgressIndicator()),
             child: ListView.builder(
-                itemCount: productList.length,
-                itemBuilder: (context, index) {
-                  return listItem(
-                    product: productList[index],
-                    onRefresh: () {},
-                  );
-                }),
+              itemCount: productList.length,
+              itemBuilder: (context, index) {
+                return listItem(product: productList[index], onRefresh: () {});
+              },
+            ),
           ),
         ),
       ),
