@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:personal_utility_app/CRUD/add_product_list_screen.dart';
 import 'package:personal_utility_app/CRUD/product.dart';
 import 'package:personal_utility_app/CRUD/product_item.dart';
 
@@ -47,85 +48,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
             icon: const Icon(Icons.refresh, color: Colors.white, size: 24),
           ),
         ],
-      ),
-      drawer: Drawer(
-        backgroundColor: const Color.fromARGB(255, 141, 163, 171),
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 1, 35, 66)),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage('assets/sakib.jpg'),
-                    ),
-                    Text(
-                      'Md Sakib Al Hasan',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Text(
-                      'mdsakib124202@gmail.com',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text(
-                "Home",
-                style: TextStyle(color: Color.fromARGB(255, 7, 1, 56)),
-              ),
-              leading: const Icon(
-                Icons.home,
-                color: Color.fromARGB(255, 43, 25, 0),
-              ),
-              onTap: () {
-                Navigator.push(
-                  (context),
-                  MaterialPageRoute(
-                    builder: (context) => const ProductListScreen(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                "Add New Product",
-                style: TextStyle(color: Color.fromARGB(255, 7, 1, 56)),
-              ),
-              leading: const Icon(
-                Icons.add,
-                color: Color.fromARGB(255, 43, 25, 0),
-              ),
-              onTap: () {
-                Navigator.push(
-                  (context),
-                  MaterialPageRoute(
-                    builder: (context) => const AddNewProductScreen(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                "Settings",
-                style: TextStyle(color: Color.fromARGB(255, 7, 1, 56)),
-              ),
-              leading: const Icon(
-                Icons.settings,
-                color: Color.fromARGB(255, 43, 25, 0),
-              ),
-              onTap: () {},
-            ),
-          ],
-        ),
       ),
       body: Container(
         decoration: const BoxDecoration(

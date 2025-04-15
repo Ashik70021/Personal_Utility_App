@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/CRUD/product_list_screen.dart';
 import 'package:http/http.dart';
+import 'package:personal_utility_app/CRUD/product_list_screen.dart';
 
 class AddNewProductScreen extends StatefulWidget {
   const AddNewProductScreen({super.key});
