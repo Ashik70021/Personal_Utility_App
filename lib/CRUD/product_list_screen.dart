@@ -61,6 +61,107 @@ class _ProductListScreenState extends State<ProductListScreen> {
             ],
           ),
         ),
+        drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 141, 163, 171),
+        child: ListView(
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 1, 35, 66),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/sakib.jpg'),
+                    ),
+                    Text(
+                      'Md Sakib Al Hasan',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                    Text(
+                      'mdsakib124202@gmail.com',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text(
+                "Home",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 7, 1, 56),
+                ),
+              ),
+              leading: const Icon(
+                Icons.home,
+                color: Color.fromARGB(255, 43, 25, 0),
+              ),
+              onTap: () {
+                Navigator.push(
+                  (context),
+                  MaterialPageRoute(
+                    builder: (context) => const ProductListScreen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
+                "Add New Product",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 7, 1, 56),
+                ),
+              ),
+              leading: const Icon(
+                Icons.add,
+                color: Color.fromARGB(255, 43, 25, 0),
+              ),
+              onTap: () {
+                Navigator.push(
+                  (context),
+                  MaterialPageRoute(
+                    builder: (context) => const AddNewProductScreen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
+                "Settings",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 7, 1, 56),
+                ),
+              ),
+              leading: const Icon(
+                Icons.settings,
+                color: Color.fromARGB(255, 43, 25, 0),
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 193, 191, 178),
+              Color.fromARGB(255, 113, 116, 152), // Dark blue at the top
+              Color.fromARGB(255, 23, 42, 59), // Lighter blue at the bottom
+            ],
+          ),
+        ),
         child: RefreshIndicator(
           onRefresh: () async {
             _getProductList();
