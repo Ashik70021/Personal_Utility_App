@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_utility_app/CRUD/add_product_list_screen.dart';
 import 'package:personal_utility_app/CRUD/product.dart';
 import 'package:personal_utility_app/CRUD/product_list_screen.dart';
 import 'package:personal_utility_app/CRUD/update_product_list_screen.dart';
@@ -16,7 +17,7 @@ class App extends StatelessWidget {
         if (settings.name == "/") {
           widget = const ProductListScreen();
         } else if (settings.name == AddNewProductScreen.name) {
-          widget = AddNewProductScreen() as Widget;
+          widget = const AddNewProductScreen();
         } else if (settings.name == UpdateProductScreen.name) {
           final Product product = settings.arguments as Product;
           widget = UpdateProductScreen(product: product);

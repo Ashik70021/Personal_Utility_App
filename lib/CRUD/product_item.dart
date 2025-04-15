@@ -1,11 +1,7 @@
-// Widget extraction
-
-// ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/CRUD/delete_function.dart';
-import 'package:flutter_application_1/CRUD/product.dart';
-import 'package:flutter_application_1/CRUD/update_product_list_screen.dart';
+import 'package:personal_utility_app/CRUD/delete_function.dart';
+import 'package:personal_utility_app/CRUD/product.dart';
+import 'package:personal_utility_app/CRUD/update_product_list_screen.dart';
 
 class listItem extends StatelessWidget {
   const listItem({super.key, required this.product, required this.onRefresh});
@@ -16,11 +12,7 @@ class listItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Image.network(
-        product.image ?? "",
-        height: 50,
-        width: 50,
-      ),
+      leading: Image.network(product.image ?? "", height: 50, width: 50),
       title: Text(
         "Item name: ${product.productName ?? ""}",
         style: const TextStyle(
