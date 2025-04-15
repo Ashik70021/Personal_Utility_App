@@ -2,10 +2,9 @@
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/CRUD/product.dart';
-import 'package:flutter_application_1/CRUD/product_list_screen.dart';
 import 'package:http/http.dart';
-
+import 'package:personal_utility_app/CRUD/product.dart';
+import 'package:personal_utility_app/CRUD/product_list_screen.dart';
 
 class UpdateProductScreen extends StatefulWidget {
   const UpdateProductScreen({super.key, required this.product});
@@ -46,10 +45,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
         backgroundColor: const Color.fromARGB(255, 1, 35, 66),
         iconTheme: const IconThemeData(color: Colors.white),
         title: const Center(
-          child: Text(
-            "Update Product",
-            style: TextStyle(color: Colors.white),
-          ),
+          child: Text("Update Product", style: TextStyle(color: Colors.white)),
         ),
       ),
       body: Container(
@@ -85,9 +81,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
       key: _formkey,
       child: Column(
         children: [
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10),
           TextFormField(
             controller: _nameTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -97,7 +91,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Name",
@@ -115,9 +111,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           TextFormField(
             controller: _priceTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -128,7 +122,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Price",
@@ -146,9 +142,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           TextFormField(
             controller: _totalPriceTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -159,7 +153,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Total Price",
@@ -177,9 +173,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           TextFormField(
             controller: _quantityTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -190,7 +184,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Quantity",
@@ -208,9 +204,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           TextFormField(
             controller: _imageTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -220,7 +214,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Image",
@@ -238,9 +234,7 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           TextFormField(
             controller: _codeTEcontroller,
             autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -250,7 +244,9 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
-                    color: Color.fromARGB(255, 218, 221, 19), width: 2),
+                  color: Color.fromARGB(255, 218, 221, 19),
+                  width: 2,
+                ),
               ),
               label: const Text(
                 "Product Code",
@@ -268,14 +264,10 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
               }
             },
           ),
-          const SizedBox(
-            height: 50,
-          ),
+          const SizedBox(height: 50),
           Visibility(
             visible: _UpdateProductInProgress == false,
-            replacement: const Center(
-              child: CircularProgressIndicator(),
-            ),
+            replacement: const Center(child: CircularProgressIndicator()),
             child: SizedBox(
               height: 50,
               width: 300,
@@ -311,7 +303,8 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     setState(() {});
 
     Uri uri = Uri.parse(
-        "https://crud.teamrabbil.com/api/v1/UpdateProduct/${widget.product.id}");
+      "https://crud.teamrabbil.com/api/v1/UpdateProduct/${widget.product.id}",
+    );
 
     Map<String, dynamic> requestBody = {
       "Img": _imageTEcontroller.text.trim(),
@@ -330,17 +323,13 @@ class _UpdateProductScreenState extends State<UpdateProductScreen> {
     _UpdateProductInProgress = false;
     setState(() {});
     if (response.statusCode == 200) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Product has been updated"),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Product has been updated")));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text("Product has not updated"),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Product has not updated")));
     }
   }
 
