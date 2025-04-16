@@ -74,17 +74,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundImage: AssetImage('assets/sakib.jpg'),
+                      backgroundImage: AssetImage('assets/alpha.jpg'),
                     ),
                     Text(
-                      'Md Sakib Al Hasan',
+                      'Team Alpha',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           overflow: TextOverflow.ellipsis),
                     ),
                     Text(
-                      'mdsakib124202@gmail.com',
+                      'team_alpha@diu.edu.bd',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
