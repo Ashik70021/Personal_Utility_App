@@ -12,9 +12,25 @@ class ResultScreen extends StatelessWidget {
     return "Obese";
   }
 
+  Color getCategoryColor(String category) {
+    switch (category) {
+      case "Underweight":
+        return Colors.blue;
+      case "Normal":
+        return Colors.green;
+      case "Overweight":
+        return Colors.orange;
+      case "Obese":
+        return Colors.red;
+      default:
+        return Colors.black;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final category = getBMICategory(bmi);
+    final categoryColor = getCategoryColor(category);
 
     return Scaffold(
       appBar: AppBar(
@@ -36,16 +52,20 @@ class ResultScreen extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 bmi.toStringAsFixed(2),
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 48,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 1, 0, 0),
+                  color: categoryColor,
                 ),
               ),
               const SizedBox(height: 24),
               Text(
                 "Category: $category",
-                style: const TextStyle(fontSize: 20),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: categoryColor,
+                ),
               ),
               const SizedBox(height: 40),
 
@@ -61,7 +81,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pop(context); // Go back to InputScreen
+                    Navigator.pop(context);
                   },
                   child: const Text(
                     "Recalculate",
